@@ -4,7 +4,7 @@
 #include <QWheelEvent>
 #include <QScrollBar>
 #include <QGraphicsEllipseItem>
-#include <QTimer>
+#include <QPainterPath>
 
 GraphicsView::GraphicsView(QWidget *parent)
     : QGraphicsView(parent), currentLine(nullptr), isDrawing(false), isPanning(false), snapIndicator(nullptr) {
@@ -18,7 +18,6 @@ GraphicsView::GraphicsView(QWidget *parent)
 
     setTransformationAnchor(QGraphicsView::NoAnchor);
     setRenderHint(QPainter::SmoothPixmapTransform);
-
 }
 
 GraphicsView::~GraphicsView() {}
@@ -36,7 +35,12 @@ void GraphicsView::mousePressEvent(QMouseEvent *event) {
         currentLine->setPen(QPen(Qt::black, 1));
         scene->addItem(currentLine);
         isDrawing = true;
+
+        lines.append(currentLine); // Сохраняем линию
+    } else if (event->button() == Qt::RightButton) {
+        closeContourAndFillGrid(); // Закрываем контур и создаем сетку
     }
+
     QGraphicsView::mousePressEvent(event);
 }
 
@@ -112,4 +116,34 @@ QPointF GraphicsView::findClosestSnapPoint(const QPointF &pos) {
         }
     }
     return closestPoint;
+}
+
+void GraphicsView::closeContourAndFillGrid() {
+    if (lines.isEmpty()) return;
+
+    // Проверяем, замкнут ли контур
+    if (lines.first()->line().p1() != lines.last()->line().p2()) return;
+
+    // Получаем границы контура
+    QPainterPath path;
+    path.moveTo(lines.first()->line().p1());
+    for (LineItem *line : lines) {
+        path.lineTo(line->line().p2());
+    }
+
+    QRectF bounds = path.boundingRect();
+    qreal step = 20.0; // Шаг сетки
+
+    // Создаём сетку
+    for (qreal x = bounds.left(); x <= bounds.right(); x += step) {
+        for (qreal y = bounds.top(); y <= bounds.bottom(); y += step) {
+            QPointF gridPoint(x, y);
+            if (path.contains(gridPoint)) {
+                QGraphicsEllipseItem *dot = new QGraphicsEllipseItem(x - 1, y - 1, 2, 2);
+                dot->setBrush(Qt::red);
+                dot->setPen(Qt::NoPen);
+                scene->addItem(dot);
+            }
+        }
+    }
 }

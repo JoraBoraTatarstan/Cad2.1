@@ -6,6 +6,7 @@ C:/Qtproject/untitled47/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/untitled47_aut
   C:/Qt/6.8.0/mingw_64/include/QtCore/QRect \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QSize \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QSizeF \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/QVector \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20iterator.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20memory.h \
@@ -133,6 +134,7 @@ C:/Qtproject/untitled47/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/untitled47_aut
   C:/Qt/6.8.0/mingw_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qvariant.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qvarlengtharray.h \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/qvector.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qyieldcpu.h \
