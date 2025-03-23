@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-5e37b194a31fb990dce7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "untitled47",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "untitled47::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-untitled47-Debug-4948f43cfafad4449bc8.json",
+					"name" : "untitled47",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "untitled47_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-untitled47_autogen-Debug-e9eb81de299efdc753d6.json",
+					"name" : "untitled47_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "untitled47_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-untitled47_autogen_timestamp_deps-Debug-d123837df57ac595697d.json",
+					"name" : "untitled47_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Qtproject/untitled47/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+		"source" : "C:/Qtproject/untitled47"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
